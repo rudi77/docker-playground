@@ -74,3 +74,24 @@ Add the following entries to the file:
 127.0.0.1 app1.localhost
 127.0.0.1 app2.localhost
 ```
+
+
+## Test It
+
+1. Build and Start docker-compose files
+```sh
+docker-compose up --build -d
+```
+
+2. Open a browser
+```
+http://app1.localhost/
+
+-> Hello, from App 1!
+```
+
+```
+http://app2.localhost/
+
+-> Hello, from App 2!
+```
