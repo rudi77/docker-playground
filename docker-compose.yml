@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web1:
+    build: .
+    command: ["python", "app1.py"]
+    ports:
+      - 8001:8000
+  web2:
+    build: .
+    command: ["python", "app2.py"]
+    ports:
+      - 8002:8000
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - web1
+      - web2
